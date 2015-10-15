@@ -1,0 +1,48 @@
+From: =?utf-8?q?S=C3=A9bastien_Delafond?= <sdelafond@gmail.com>
+Date: Thu, 15 Oct 2015 11:48:13 +0200
+Subject: Makefile adjustments
+
+  * install binary as usr/bin/yank-cli
+  * install manpage as yank-cli(1)
+  * do not fail "clean" task when binary isn't present
+---
+ Makefile | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 2bcc25c..51bfda6 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,6 +2,7 @@ VERSION = 0.4.0
+ 
+ PREFIX  ?= /usr/local
+ YANKCMD ?= xsel
++NAME ?= yank-cli
+ 
+ CFLAGS   += -Os -pedantic -std=c99 -Wall -Werror -Wextra
+ CPPFLAGS += -DVERSION=\"${VERSION}\" -DYANKCMD=\"${YANKCMD}\"
+@@ -10,17 +11,17 @@ yank: yank.c
+ 	${CC} ${CFLAGS} $^ -o $@ ${LDFLAGS} ${CPPFLAGS}
+ 
+ clean:
+-	rm yank
++	rm -f yank
+ 
+ install: yank
+-	@echo "yank -> ${PREFIX}/bin/yank"
++	@echo "yank -> ${PREFIX}/bin/${NAME}"
+ 	@mkdir -p "${PREFIX}/bin"
+-	@cp -f yank "${PREFIX}/bin"
+-	@chmod 755 "${PREFIX}/bin/yank"
+-	@echo "yank.1 -> ${PREFIX}/share/man/man1/yank.1"
++	@cp -f yank "${PREFIX}/bin/${NAME}"
++	@chmod 755 "${PREFIX}/bin/${NAME}"
++	@echo "yank.1 -> ${PREFIX}/share/man/man1/${NAME}.1"
+ 	@mkdir -p "${PREFIX}/share/man/man1"
+-	@cp -f yank.1 "${PREFIX}/share/man/man1/yank.1"
+-	@chmod 644 "${PREFIX}/share/man/man1/yank.1"
++	@cp -f yank.1 "${PREFIX}/share/man/man1/${NAME}.1"
++	@chmod 644 "${PREFIX}/share/man/man1/${NAME}.1"
+ 
+ .PHONY: clean install
+ 
