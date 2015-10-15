@@ -1,0 +1,5 @@
+yank (0.4.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #801837)
+
+ -- Sebastien Delafond <seb@debian.org>  Thu, 15 Oct 2015 15:53:45 +0200

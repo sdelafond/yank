@@ -1,0 +1,2 @@
+version=3
+https://github.com/mptre/yank .*/v(\d[\d\.]*)\.tar\.gz debian uupdate

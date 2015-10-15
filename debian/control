@@ -1,0 +1,22 @@
+Source: yank
+Section: utils
+Priority: optional
+Maintainer: Sebastien Delafond <seb@debian.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+Homepage: https://github.com/mptre/yank
+Vcs-Git: git://anonscm.debian.org/collab-maint/yank.git
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/yank.git
+
+Package: yank
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, xsel
+Description: interactively select and yank terminal output to stdout or xsel
+ Read input from stdin and draw a selection interface where all fields
+ in the given input are recognized by using a default or user-supplied
+ set of delimiters.
+ .
+ Using ctrl-n and ctrl-p will move the field selection forward and
+ backward, pressing the return key will invoke the yank command and
+ write the selected field to its stdin. The yank command defaults to
+ xsel, but could be anything that accepts input on stdin.
