@@ -1,0 +1,8 @@
+The binary shipped by this package is /usr/bin/yank-cli, as
+/usr/bin/yank is already part of the emboss package. Feel free to
+alias yank-cli to something shorter, as it's meant to be a command to
+quickly insert anywhere on the command line.
+
+  alias y=/usr/bin/yank-cli
+
+ -- Sebastien Delafond <seb@debian.org>, Fri, 16 Oct 2015 08:06:35 +0200
