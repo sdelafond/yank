@@ -1,3 +1,10 @@
+yank (0.4.0-2) unstable; urgency=medium
+
+  * Add docs and README.Debian, documenting the fact that this package
+    ships /usr/bin/yank-cli because /usr/bin/yank is already taken.
+
+ -- Sebastien Delafond <seb@debian.org>  Fri, 16 Oct 2015 08:07:02 +0200
+
 yank (0.4.0-1) unstable; urgency=low
 
   * Initial release (Closes: #801837)
