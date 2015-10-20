@@ -1,3 +1,9 @@
+yank (0.4.1-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #802292)
+
+ -- Sebastien Delafond <seb@debian.org>  Tue, 20 Oct 2015 08:58:54 +0200
+
 yank (0.4.0-2) unstable; urgency=medium
 
   * Add docs and README.Debian, documenting the fact that this package
