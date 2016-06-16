@@ -14,12 +14,12 @@ regular expression using the `-g` option or by splitting the input on a
 delimiter sequence using the `-d` option.
 
 Using the arrow keys will move the selected field. The interface supports
-several Emacs like key bindings, consult the man page for further reference.
-Pressing the return key will invoke the yank command and write the selected
-field to its `stdin`. The yank command defaults to xsel[1] but could be anything
-that accepts input on `stdin`. When invoking yank everything supplied after the
-`--` option will be used as the yank command, see examples below. The default
-yank command can also be defined at compile time, see compilation below.
+several Emacs and Vi like key bindings, consult the man page for further
+reference. Pressing the return key will invoke the yank command and write the
+selected field to its `stdin`. The yank command defaults to xsel[1] but could be
+anything that accepts input on `stdin`. When invoking yank everything supplied
+after the `--` option will be used as the yank command, see examples below. The
+default yank command can also be defined at compile time, see compilation below.
 
 Motivation
 ----------
@@ -74,11 +74,11 @@ Run the following command:
   make
   ```
 
-The default yank command can be defined using the `YANKCMD` environment
-variable. Example: OS X users would use `pbcopy` as the default yank command:
+The default yank command can be defined using the `YANKCMD` variable. Example:
+OS X users would use `pbcopy` as the default yank command:
 
   ```
-  YANKCMD=pbcopy make
+  make YANKCMD=pbcopy
   ```
 
 Alternatively put the `YANKCMD` variable declaration in your local `config.mk`
@@ -111,10 +111,10 @@ The install directory defaults to `/usr/local`:
   make install
   ```
 
-Change the install directory using the `PREFIX` environment variable:
+Change the install directory using the `PREFIX` variable:
 
   ```
-  PREFIX=DIR make install
+  make PREFIX=DIR install
   ```
 
 [1] http://www.vergenet.net/~conrad/software/xsel/
