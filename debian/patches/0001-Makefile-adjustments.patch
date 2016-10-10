@@ -1,4 +1,4 @@
-From: =?utf-8?q?S=C3=A9bastien_Delafond?= <sdelafond@gmail.com>
+From: Sébastien Delafond <sdelafond@gmail.com>
 Date: Thu, 15 Oct 2015 11:48:13 +0200
 Subject: Makefile adjustments
 
@@ -12,7 +12,7 @@ Subject: Makefile adjustments
 --- a/Makefile
 +++ b/Makefile
 @@ -1,7 +1,7 @@
- VERSION=	0.7.0
+ VERSION=	0.7.1
  
  YANKCMD=	xsel
 -
@@ -20,12 +20,8 @@ Subject: Makefile adjustments
  PREFIX=		/usr/local
  MANPREFIX=	${PREFIX}/share/man
  
-@@ -12,17 +12,17 @@
- 	${CC} ${CFLAGS} -o $@ $< ${LDFLAGS} ${CPPFLAGS}
- 
- clean:
--	rm yank
-+	rm -f yank
+@@ -15,14 +15,14 @@
+ 	rm -f yank
  
  install: yank
 -	@echo "yank -> ${PREFIX}/bin/yank"
