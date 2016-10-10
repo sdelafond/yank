@@ -1,3 +1,11 @@
+yank (0.7.1-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.7.1
+  * Fix Makefile's clean target
+  * Adjust debian/patches/0001-Makefile-adjustments
+
+ -- Sebastien Delafond <seb@debian.org>  Mon, 10 Oct 2016 10:50:36 +0200
+
 yank (0.7.0-1) unstable; urgency=medium
 
   * New upstream release
