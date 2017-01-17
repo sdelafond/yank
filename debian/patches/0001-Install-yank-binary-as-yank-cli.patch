@@ -1,0 +1,31 @@
+From: =?utf-8?q?S=C3=A9bastien_Delafond?= <sdelafond@gmail.com>
+Date: Fri, 20 Jan 2017 10:41:53 +0100
+Subject: Install yank binary as yank-cli
+
+---
+ Makefile | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 022ff1d..529a5d3 100644
+--- a/Makefile
++++ b/Makefile
+@@ -4,6 +4,7 @@ YANKCMD=	xsel
+ 
+ PREFIX=		/usr/local
+ MANPREFIX=	${PREFIX}/share/man
++NAME=		yank-cli
+ 
+ INSTALL_PROGRAM=	install -s -m 0755
+ INSTALL_MAN=		install -m 0644
+@@ -22,8 +23,8 @@ clean:
+ install: yank
+ 	@mkdir -p ${DESTDIR}${PREFIX}/bin
+ 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+-	${INSTALL_PROGRAM} yank ${DESTDIR}${PREFIX}/bin
+-	${INSTALL_MAN} yank.1 ${DESTDIR}${MANPREFIX}/man1
++	${INSTALL_PROGRAM} yank ${DESTDIR}${PREFIX}/bin/${NAME}
++	${INSTALL_MAN} yank.1 ${DESTDIR}${MANPREFIX}/man1/${NAME}.1
+ 
+ .PHONY: all clean install
+ 
