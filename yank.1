@@ -9,62 +9,62 @@
 .Op Fl lx | v
 .Op Fl d Ar delim
 .Op Fl g Ar pattern Op Fl i
-.Op Fl - Ar command Op Ar args
+.Op Fl - Ar command Op Ar argument ...
 .Sh DESCRIPTION
 Read input from
 .Pa stdin
 and display a selection interface that allows a field to be selected and copied
-to the clipboard. Fields are either recognized by a regular expression using the
+to the clipboard.
+Fields are either recognized by a regular expression using the
 .Fl g
 option or by splitting the input on a delimiter sequence using the
 .Fl d
 option, see
 .Em DELIMITERS .
 .Pp
-Using the arrow keys will move the selected field. The interface support several
-Emacs and Vi like key bindings, see
+Using the arrow keys will move the selected field, see
 .Em COMMANDS .
-Pressing the return key will invoke the yank command and write the selected
-field to its
+Pressing the return key will invoke
+.Ar command
+and write the selected field to its
 .Pa stdin .
-The yank command defaults to
+The
+.Ar command
+defaults to
 .Xr xsel 1
 but could be anything that accepts input on
-.Pa stdin .
-When invoking
-.Nm
-everything supplied after the
-.Fl -
-option will be used as the yank command, see
+.Pa stdin ,
+see
 .Em EXAMPLES .
-.Sh OPTIONS
-.Bl -tag -width -indent
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
 .It Fl d Ar delim
-all input characters not present in
+All input characters not present in
 .Ar delim
 will be recognized as fields, see
-.Em DELIMITERS
+.Em DELIMITERS .
 .It Fl g Ar pattern
-use the regular expression
+Use
 .Ar pattern
-to recognize fields expressed as a to POSIX extended regular expression
+to recognize fields, expressed as a POSIX extended regular expression.
 .It Fl i
-ignore case differences between
+Ignore case differences between
 .Ar pattern
-and the input
+and the input.
 .It Fl l
-use the default delimiters except for space, see
-.Em DELIMITERS
+Use the default delimiters except for space, see
+.Em DELIMITERS .
 .It Fl v
-prints version
+Prints version.
 .It Fl x
-use alternate screen
-.It Fl - Ar command Op Ar args
-use
+Use alternate screen.
+.It Fl - Ar command Op Ar argument ...
+Use
 .Ar command
 with zero or more
 .Ar args
-as the yank command
+as the yank command.
 .El
 .Sh COMMANDS
 .Bl -tag -width XXXX
@@ -88,7 +88,7 @@ and
 .Fl g
 options are omitted the following characters are recognized as delimiters by
 default:
-.Bl -tag -width -indent
+.Bl -tag -width XXXX
 .It \ef
 form feed
 .It \en
@@ -106,34 +106,30 @@ If the
 option is present space is not recognized as a delimiter.
 .Sh EXAMPLES
 Yank a environment variable key or value:
-.Pp
-.Dl env | yank -d =
+.Dl $ env | yank -d =
 .Pp
 Yank a field from a CSV file:
-.Pp
-.Dl yank -d \e\&", <file.csv
+.Dl $ yank -d \e\&", <file.csv
 .Pp
 Yank a whole line using the
 .Fl l
 option:
-.Pp
-.Dl make 2>&1 | yank -l
+.Dl $ make 2>&1 | yank -l
 .Pp
 If
 .Pa stdout
 is not a terminal the selected field will be written to
 .Pa stdout
-and exit without invoking the yank command. Kill the selected PID:
-.Pp
-.Dl ps ux | yank -g [0-9]+ | xargs kill
+and exit without invoking the yank command.
+Kill the selected PID:
+.Dl $ ps ux | yank -g [0-9]+ | xargs kill
 .Pp
 Yank the selected field to the clipboard as opposed of the default primary
 clipboard:
-.Pp
-.Dl yank -- xsel -b
+.Dl $ yank -- xsel -b
 .Sh DIAGNOSTICS
 .Ex -std
 .Sh SEE ALSO
 .Xr re_format 7
 .Sh AUTHORS
-.An "Anton Lindqvist" Aq anton.lindqvist@gmail.com
+.An Anton Lindqvist Aq Mt anton.lindqvist@gmail.com

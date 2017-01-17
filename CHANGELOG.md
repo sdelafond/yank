@@ -1,3 +1,14 @@
+v0.8.0 - 2017-01-17
+===================
+
+- Update man page and README (9eac46f, 252a419) (Anton Lindqvist)
+
+- Add Arch Linux install instructions to README (#32) (Javier Tiá)
+
+- Use `install(1)` in Makefile (11a2dc1, 42604e9) (Anton Lindqvist)
+
+- Add support for `DESTDIR` to Makefile (77cf987) (Anton Lindqvist)
+
 v0.7.1 - 2016-10-08
 ===================
 
