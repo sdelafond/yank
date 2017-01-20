@@ -124,8 +124,6 @@ Maintainer: Carl Dong <dongcarl () fastmail ! fm>
 
 Maintainer: Carl Dong <dongcarl () fastmail ! fm>
 
-Maintainer: Carl Dong <dongcarl () fastmail ! fm>
-
 ### From source
 
 The install directory defaults to `/usr/local`:
