@@ -5,8 +5,8 @@ Maintainer: Sebastien Delafond <seb@debian.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.8
 Homepage: https://github.com/mptre/yank
-Vcs-Git: git://anonscm.debian.org/collab-maint/yank.git
-Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/yank.git
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/yank.git
+Vcs-Browser: https://anonscm.debian.org/git/collab-maint/yank.git
 
 Package: yank
 Architecture: any
