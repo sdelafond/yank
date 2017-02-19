@@ -1,4 +1,4 @@
-VERSION=	0.8.1
+VERSION=	0.8.2
 
 YANKCMD=	xsel
 
@@ -19,7 +19,7 @@ ${PROG}: yank.c
 	${CC} ${CFLAGS} -o ${PROG} yank.c ${LDFLAGS} ${CPPFLAGS}
 
 clean:
-	rm ${PROG}
+	rm -f ${PROG}
 
 install: ${PROG}
 	@mkdir -p ${DESTDIR}${PREFIX}/bin
