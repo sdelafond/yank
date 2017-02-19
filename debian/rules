@@ -8,4 +8,4 @@ include /usr/share/dpkg/default.mk
 	dh $@ 
 
 override_dh_auto_install:
-	$(MAKE) PREFIX=$(CURDIR)/debian/yank/usr install
+	$(MAKE) PREFIX=$(CURDIR)/debian/yank/usr PROG=yank-cli install
