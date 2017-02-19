@@ -1,0 +1,21 @@
+From: =?utf-8?q?S=C3=A9bastien_Delafond?= <sdelafond@gmail.com>
+Date: Sun, 19 Feb 2017 12:19:30 +0100
+Subject: Do not fail clean task
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index f8eb0c4..d5a8c6c 100644
+--- a/Makefile
++++ b/Makefile
+@@ -19,7 +19,7 @@ ${PROG}: yank.c
+ 	${CC} ${CFLAGS} -o ${PROG} yank.c ${LDFLAGS} ${CPPFLAGS}
+ 
+ clean:
+-	rm ${PROG}
++	rm -f ${PROG}
+ 
+ install: ${PROG}
+ 	@mkdir -p ${DESTDIR}${PREFIX}/bin
