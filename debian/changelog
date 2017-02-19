@@ -1,3 +1,10 @@
+yank (0.8.1-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.8.1
+  * Upstream now provides a way to install the yank binary under another name
+
+ -- Sebastien Delafond <seb@debian.org>  Sun, 19 Feb 2017 12:17:19 +0100
+
 yank (0.8.0-1) unstable; urgency=medium
 
   * Imported Upstream version 0.8.0  
