@@ -1,3 +1,10 @@
+yank (0.8.2-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.8.2
+  * Makefile patch integrated by upstream
+
+ -- Sebastien Delafond <seb@debian.org>  Sun, 19 Feb 2017 15:37:53 +0100
+
 yank (0.8.1-1) unstable; urgency=medium
 
   * Imported Upstream version 0.8.1
