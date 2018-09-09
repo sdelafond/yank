@@ -1,3 +1,9 @@
+yank (1.0.0-1) unstable; urgency=medium
+
+  * New upstream version 1.0.0
+
+ -- Sebastien Delafond <seb@debian.org>  Sun, 09 Sep 2018 11:16:09 +0200
+
 yank (0.8.3-2) unstable; urgency=medium
 
   * Switch to DEP 14
