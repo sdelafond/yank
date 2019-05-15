@@ -1,3 +1,13 @@
+yank (1.1.0-2) unstable; urgency=medium
+
+  * Fix FTCBFS (Closes: #929004), thanks to the patch provided entirely
+    by Helmut Grohne <helmut@subdivi.de>  
+    + Pass INSTALL_PROGRAM without -s
+    + Also pass PROG= to dh_auto_build
+  * Bump-up Standards-Version
+  
+ -- Sebastien Delafond <seb@debian.org>  Wed, 15 May 2019 17:18:55 +0200
+
 yank (1.1.0-1) unstable; urgency=medium
 
   * New upstream version 1.1.0
