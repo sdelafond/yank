@@ -7,5 +7,8 @@ include /usr/share/dpkg/default.mk
 %:
 	dh $@
 
+override_dh_auto_build:
+	dh_auto_build -- PROG=yank-cli
+
 override_dh_auto_install:
-	$(MAKE) PREFIX=$(CURDIR)/debian/yank/usr PROG=yank-cli install
+	$(MAKE) PREFIX=$(CURDIR)/debian/yank/usr PROG=yank-cli INSTALL_PROGRAM="install -m 0755" install
