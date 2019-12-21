@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Sebastien Delafond <seb@debian.org>
 Build-Depends: debhelper (>= 9)
-Standards-Version: 4.3.0
+Standards-Version: 4.4.1
 Homepage: https://github.com/mptre/yank
 Vcs-Git: https://salsa.debian.org/debian/yank.git
 Vcs-Browser: https://salsa.debian.org/debian/yank
