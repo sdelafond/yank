@@ -262,6 +262,7 @@ tsetup(void)
 	if (tcgetattr(tty.rfd, &tty.attr) == -1)
 		err(1, "tcgetattr");
 	attr = tty.attr;
+	attr.c_iflag |= ICRNL;
 	attr.c_lflag &= ~(ICANON|ECHO|ISIG);
 	if (tcsetattr(tty.rfd, TCSANOW, &attr) == -1)
 		err(1, "tcsetattr");
@@ -316,18 +317,19 @@ tgetc(void)
 		{ "\033[D",	KEY_LEFT },
 		{ NULL,		0 },
 	};
-	char	buf[3];
+	char	buf[4];
 	ssize_t	n;
 	int	i;
 
-	n = read(tty.rfd, buf, sizeof(buf));
+	n = read(tty.rfd, buf, sizeof(buf) - 1);
 	if (n == -1)
 		err(1, "read");
 	if (n == 0)
 		return KEY_TERM;	/* EOF */
+	buf[n] = '\0';
 
 	for (i = 0; keys[i].s != NULL; i++)
-		if (strncmp(keys[i].s, buf, n) == 0)
+		if (strncmp(keys[i].s, buf, strlen(keys[i].s)) == 0)
 			return keys[i].c;
 
 	return 0;
@@ -402,7 +404,7 @@ tmain(void)
 static void
 usage(void)
 {
-	fprintf(stderr, "usage: yank [-lx | -v] [-d delim] [-g pattern [-i]] "
+	fprintf(stderr, "usage: yank [-ilxv] [-d delim] [-g pattern] "
 	    "[-- command [args]]\n");
 	exit(2);
 }
